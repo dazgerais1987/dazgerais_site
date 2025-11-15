@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Agendamento</title>
+</head>
+<body>
+    <header class="cabecario">
+        <img class="img_logo" src="./img/logo_dazgerais.png" alt="Logo Daz Gerais">
+        <img class="img_banner" src="./img/banner_dazgerais.png" alt="Banner Daz Gerais">
+    </header>
+
+    <nav class="nav_menu">
+        <ul class="menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="sobre.html">SOBRE</a></li>
+            <li><a href="contato.html">CONTATO</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="conteudo_principal">
+            <section>
+                <article class="artigos">
+                    <h1>Agendamentos</h1>
+                    <div class="barras">
+                        <input id="nome" type="text" placeholder="Seu nome"/>
+                        <input id="data" type="date" />
+                        <input id="hora" type="time" />
+                    </div>
+
+                    <button onclick="agendar()">Agendar</button>
+
+                    <div class="agendamento" id="listaAgendamento">
+                        <h3>Agendamentos:</h3>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; Daz Gerais 2025</p>
+        <ul class="links_rodape">
+            <li>
+                <a href="https://www.instagram.com/dazgerais87" target="_blank">
+                    Instagram
+                </a>
+            </li>
+        </ul>
+    </footer>
+    
+    <script src="agendamento.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Calculadora de consumo de combustível</title>
+</head>
+<body>
+    <header class="cabecario">
+        <img class="img_logo" src="./img/logo_dazgerais.png" alt="Logo Daz Gerais">
+        <img class="img_banner" src="./img/banner_dazgerais.png" alt="Banner Daz Gerais">
+    </header>
+
+    <nav class="nav_menu">
+        <ul class="menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="sobre.html">SOBRE</a></li>
+            <li><a href="contato.html">CONTATO</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="conteudo_principal">
+            <section>
+                <article class="artigos">
+                    <div class="barras">
+                        <label for="km_ida">Quantos quilômetros na ida?</label>
+                        <input type="number" step="0.01" id="km_ida" placeholder="Insira os km"><br>
+                    </div>
+
+                    <div class="barras">
+                        <label for="km_volta">Quantos quilômetros na volta?</label>
+                        <input type="number" step="0.01" id="km_volta" placeholder="Insira os km"><br>
+                    </div>
+
+                    <div class="barras">
+                        <label for="km_veiculo">Seu veículo faz quantos quilômetros por litro?</label>
+                        <input type="number" step="0.01" id="km_veiculo" placeholder="Insira os km"><br>
+                    </div>
+
+                    <div class="barras">
+                        <label for="valor_combustivel">Qual valor em média do combustível?</label>
+                        <input type="number" step="0.01" id="valor_combustivel" placeholder="Valor por litro"><br>
+                    </div>
+
+                    <button onclick="calcular()">Calcular</button>
+
+                    <p id="resultado"></p>
+
+                    <p>*Valores são aproximados, deve-se levar em conta sua forma de dirigir/pilotar, 
+                        adversidade da via e tempo que podem variar o consumo do veículo e principalmente 
+                        valores dos postos onde irá fazer o reabastecimento durante a viagem.</p>
+                </article>
+            </section>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; Daz Gerais 2025</p>
+        <ul class="links_rodape">
+            <li>
+                <a href="https://www.instagram.com/dazgerais87" target="_blank">
+                    Instagram
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script>
+        const msg_resultado = document.getElementById("resultado");
+
+        function calcular() {
+            const km_ida = parseFloat(document.getElementById("km_ida").value);
+            const km_volta = parseFloat(document.getElementById("km_volta").value);
+            const km_veiculo = parseFloat(document.getElementById("km_veiculo").value);
+            const valor_combustivel = parseFloat(document.getElementById("valor_combustivel").value);
+            const km_viagem = km_ida + km_volta;
+            const consumo_viagem = km_viagem / km_veiculo;
+            const valor_viagem = consumo_viagem * valor_combustivel;
+
+            if (isNaN(km_ida)) {
+                msg_resultado.innerHTML = "Informação de quilometragem ida inválida!";
+                return;
+            }
+
+            if (isNaN(km_volta)) {
+                msg_resultado.innerHTML = "Informação de quilometragem volta inválida!";
+                return;
+            }
+
+            if (isNaN(km_veiculo)) {
+                msg_resultado.innerHTML = "Informação de quilometragem por litro do seu veículo inválida!";
+                return;
+            }
+
+            if (isNaN(valor_combustivel)) {
+                msg_resultado.innerHTML = "Informação do valor do combustível inválida!";
+                return;
+            }
+
+            else
+                msg_resultado.innerHTML = `Consumo médio do veículo: ${km_veiculo}km/l, viagem ida e volta: ${km_viagem}km, valor combustível por litro: R$ ${valor_combustivel}, você irá consumir ${consumo_viagem.toFixed(1)} litros e irá gastar R$ ${valor_viagem.toFixed(2)} nessa viagem.`;
+        }
+    </script>
+</body>
+</html>
