@@ -90,6 +90,15 @@ p {
     padding: 1rem;
 }
 
+.conteudos {
+    width: 100%;
+    gap: 1rem; /* Espaçamento entre os elementos filhos */
+}
+
+.artigos p {
+    margin: 15px 0;
+}
+
 aside {
     width: 20%;
 }
@@ -135,7 +144,57 @@ section {
     gap: 1rem;
 }
 
+.img_artigo {
+    max-width: 300px;
+    width: 100%;
+    display: block;
+    margin: 50px auto;
+}
+
 /* --- MAIN FIM --- */
+
+/* --- GALERIA DE FOTOS INICIO --- */
+
+.container_galeria {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 50px 8%;
+}
+
+.galeria > div {
+    float: left;
+    width: 33%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.foto img {
+    width: 100%;
+    display: block;
+}
+
+.legenda_foto {
+    display: none;
+}
+
+.galeria .foto:target {
+    position: fixed;
+    width: 35%;
+    top: 15px;
+    left: 30%;
+    padding: 5px;
+    border: solid 1px #333;
+    box-shadow: 0 0 25px 10px #000;
+    border-radius: 5px;
+}
+
+.foto:target .legenda_foto {
+    display: block;
+}
+
+/* --- GALERIA DE FOTOS FIM --- */
 
 /* --- RODAPE --- */
 
@@ -198,3 +257,75 @@ section {
 }
 
 /* --- CALCULADORA CONSUMO COMBUSTÍVEL FIM --- */
+
+/* --- FORMATAÇÃO PARA CELULAR INÍCIO --- */
+
+@media (max-width: 620px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .conteudo_principal, aside {
+        width: 100%;
+    }
+
+    .img_logo {
+        margin: 0 auto;
+        display: block;
+    }
+
+    .img_banner {
+        margin: 20px auto 0 auto;
+        display: block;
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 400px) {
+    .nav_menu li a {
+        padding: 2px;
+        font-size: 0.6rem;
+    }
+
+    .nav_menu li a u {
+        padding: 2px;
+        font-size: 0.6rem;
+    }
+
+    .img_banner {
+        margin: 5px auto 0 auto;
+        display: block;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .container_galeria {
+        display: block;
+        padding: 0;
+    }
+
+    .galeria div {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
+    .galeria .foto:target {
+    position: fixed;
+    width: 90%;
+    top: 15px;
+    left: 5%;
+    padding: 5px;
+    border: solid 1px #333;
+    box-shadow: 0 0 25px 10px #000;
+    border-radius: 5px;
+    }
+
+    .foto:target .legenda_foto {
+        display: block;
+    }
+}
+
+/* --- FORMATAÇÃO PARA CELULAR FIM --- */
