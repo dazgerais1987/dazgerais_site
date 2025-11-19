@@ -250,6 +250,18 @@ section {
     margin-bottom: 1rem;
 }
 
+.barras input {
+    width: 40%;
+}
+
+button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    color: #282828;
+    background-color: #fff001;
+    border-radius: 15px;
+}
+
 #resultado {
     margin-top: 1rem;
     margin-bottom: 1rem;
