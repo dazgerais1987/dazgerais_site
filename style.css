@@ -132,9 +132,10 @@ article {
 }
 
 .artigos a {
-    display: block;
+    display: flex;
     margin-top: 1rem;
     color: #fff001;
+    justify-content: center; /* centraliza na horizontal */
 }
 
 /* Para garantir que os articles fiquem empilhados verticalmente dentro da section */
