@@ -1,87 +1,120 @@
-/* --- FORMATAÇÃO INICIAL --- */
-
+/* Remove margens e espaçamentos padrão dos navegadores */
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    list-style: none;
-    font-size: 1rem;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #d5d5d5;
+}
+
+/* Configuração geral do corpo da página */
+body {
+    font-family: Ari*l, Helvetica, sans-serif;
     background-color: #282828;
+    color: #d5d5d5;
+    padding-bottom: 70px; /* Espaço para o rodapé fixo não cobrir o conteúdo */
 }
 
-h3 {
-    margin-top: 20px;
+/* Remove bolinhas das listas */
+ul {
+    list-style: none;
 }
 
+/* Estilo geral dos links */
 a {
     color: #fff001;
     text-decoration: none;
 }
 
+/* Link ao passar o mouse */
+a:hover {
+    text-decoration: underline;
+}
+
+/* Mantém o destaque amarelo no item sublinhado do menu */
 u {
     color: #fff001;
 }
 
+/* Parágrafos */
 p {
     text-align: justify;
+    line-height: 1.5;
 }
 
-/* --- FORMATAÇÃO INICIAL FIM --- */
-
-/* --- HEADER --- */
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
 
 .cabecario {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+
     padding: 20px;
     background-color: #5b09b1;
     border-bottom: 2px solid #282828;
 }
 
+/* Logo do time */
 .img_logo {
-    margin-left: 50px;
     width: 100px;
-    background-color: #5b09b1;
+    margin-left: 50px;
+    background-color: transparent;
 }
 
+/* Banner */
 .img_banner {
-    margin-right: 50px;
     width: 350px;
-    background-color: #5b09b1;
+    max-width: 100%;
+    margin-right: 50px;
+    background-color: transparent;
 }
 
-/* --- HEADER FIM --- */
+/* =========================================================
+   MENU DE NAVEGAÇÃO
+   ========================================================= */
 
-/* --- NAV MENU --- */
+.nav_menu {
+    background-color: #5b09b1;
+}
 
 .menu {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     background-color: #5b09b1;
 }
 
 .menu li {
-    margin-left: 10px;
+    background-color: #5b09b1;
 }
 
 .menu li a {
     display: block;
-    padding: 10px;
+    padding: 12px 15px;
+
+    color: #d5d5d5;
     background-color: #5b09b1;
+
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-/* --- NAV MENU FIM --- */
+.menu li a:hover {
+    color: #fff001;
+    background-color: #43077f;
+    text-decoration: none;
+}
 
-/* --- MAIN --- */
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+   ========================================================= */
 
 .container {
     display: flex; /* Ativa o Flexbox para alinhar itens lado a lado */
     justify-content: space-between; /* Distribui o espaço entre os elementos */
-    padding: 1rem;
+    width: 100%;
+    padding: 20px;
     gap: 1rem; /* Adiciona um espaçamento entre os elementos filhos */
 }
 
@@ -92,57 +125,37 @@ p {
 
 .conteudos {
     width: 100%;
-    gap: 1rem; /* Espaçamento entre os elementos filhos */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+article {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #d5d5d5;
+}
+
+.artigos h1 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #fff001;
+    text-align: center;
 }
 
 .artigos p {
     margin: 15px 0;
 }
 
-aside {
-    width: 20%;
-}
-
-.nav_lateral {
-    border-left: 1px solid #d5d5d5;
-    padding: 1rem;
-}
-
-.nav_lateral ul li {
-    margin-bottom: 0.5rem;
-    border-bottom: 1px solid #d5d5d5;
-}
-
-article {
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #d5d5d5;
-    padding-bottom: 1rem;
-}
-
-.artigos h1 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: #fff001;
-}
-
-.lista_artigos {
-    margin-left: 30px;
-    margin-bottom: 0.5rem;
-    list-style-type: disc;
-}
-
-.artigos a {
-    display: flex;
-    margin-top: 1rem;
-    color: #fff001;
-    justify-content: center; /* centraliza na horizontal */
-}
-
-/* Para garantir que os articles fiquem empilhados verticalmente dentro da section */
-section {
-    display: flex;
-    flex-direction: column; /* Organiza os articles em coluna (um abaixo do outro) */
-    gap: 1rem;
+.artigos > p:last-child a {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
 }
 
 .img_artigo {
@@ -163,193 +176,330 @@ section {
     border-bottom: 50px solid #d5d5d5;
 }
 
-/* --- MAIN FIM --- */
+/* =========================================================
+   GALERIA DE FOTOS
+   ========================================================= */
 
-/* --- GALERIA DE FOTOS INICIO --- */
-
+/* Área externa da galeria */
 .container_galeria {
     width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 50px 8%;
+    padding: 40px 0;
 }
 
-.galeria > div {
-    float: left;
-    width: 33%;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.foto img {
+/* Grade das fotos */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
     width: 100%;
+}
+
+/* Cada bloco de foto */
+.foto {
+    position: relative;
+}
+
+/* Link que envolve a imagem */
+.foto > a {
     display: block;
 }
 
+/* Imagem pequena da galeria */
+.foto img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+
+    cursor: pointer;
+
+    border-top: 5px solid #d5d5d5;
+    border-left: 5px solid #d5d5d5;
+    border-right: 5px solid #d5d5d5;
+    border-bottom: 45px solid #d5d5d5;
+
+    box-shadow: 0 0 10px #000;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito ao passar o mouse na foto */
+.foto img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 20px #000;
+}
+
+/* Legenda fica escondida enquanto a foto está pequena */
 .legenda_foto {
     display: none;
 }
 
-.galeria .foto:target {
+/* =========================================================
+   FOTO AMPLIADA COM :TARGET
+   ========================================================= */
+
+/*
+   Quando o usuário clica em uma foto, o navegador vai até o ID dela.
+   Exemplo:
+   href="#foto1" ativa o elemento que tem id="foto1".
+   O CSS abaixo altera o visual desse elemento ativo.
+*/
+
+.foto:target {
     position: fixed;
-    width: 35%;
-    top: 15px;
-    left: 30%;
-    padding: 5px;
-    border: solid 1px #333;
-    box-shadow: 0 0 25px 10px #000;
-    border-radius: 5px;
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background-color: rgba(0, 0, 0, 0.95);
 }
 
+/* Link da foto ampliada */
+.foto:target > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 95%;
+    max-height: 80vh;
+
+    background-color: transparent;
+}
+
+/* Imagem ampliada */
+.foto:target img {
+    width: auto;
+    height: auto;
+
+    max-width: 100%;
+    max-height: 80vh;
+
+    object-fit: contain;
+
+    transform: none;
+
+    border-top: 5px solid #d5d5d5;
+    border-left: 5px solid #d5d5d5;
+    border-right: 5px solid #d5d5d5;
+    border-bottom: 45px solid #d5d5d5;
+
+    box-shadow: 0 0 30px #000;
+
+    background-color: transparent;
+}
+
+/* Mostra a legenda quando a foto está ampliada */
 .foto:target .legenda_foto {
     display: block;
+
+    margin-top: 15px;
+    padding: 10px 15px;
+
+    color: #fff001;
+    background-color: transparent;
+
+    text-align: center;
+    font-weight: bold;
 }
 
-/* --- GALERIA DE FOTOS FIM --- */
+/* Link fechar dentro da legenda */
+.foto:target .legenda_foto a {
+    display: inline-block;
 
-/* --- RODAPE --- */
+    margin-top: 10px;
+    padding: 8px 18px;
+
+    color: #282828;
+    background-color: #fff001;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Efeito do botão fechar */
+.foto:target .legenda_foto a:hover {
+    background-color: #d5c900;
+    text-decoration: none;
+}
+
+/* =========================================================
+   VÍDEO DO YOUTUBE
+   ========================================================= */
+
+.galeria iframe {
+    width: 100%;
+    max-width: 344px;
+    height: 612px;
+
+    justify-self: center;
+
+    border: 5px solid #d5d5d5;
+    box-shadow: 0 0 10px #000;
+}
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
 
 .rodape {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #fff001;
-    clear: both;
     position: fixed;
     bottom: 0;
     left: 0;
+
     width: 100%;
-    box-sizing: border-box;
-    background-color: #5b09b1;
+
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 50px;
+
+    color: #fff001;
+    background-color: #5b09b1;
+
+    z-index: 1000;
 }
 
 .rodape p {
     color: #fff001;
-    font-size: 15px;
-    padding-left: 50px;
-    background-color: #5b09b1;
+    background-color: transparent;
+    font-size: 0.9rem;
 }
 
 .links_rodape {
-    justify-content:center;
-    background-color: #5b09b1;
+    background-color: transparent;
 }
 
 .links_rodape li {
-    display: inline-block;
-    text-align: center;
-    background-color: #5b09b1;
+    background-color: transparent;
 }
 
 .links_rodape a {
-    font-size: 15px;
     color: #fff001;
-    background-repeat: no-repeat;
-    padding-right: 50px;
-    background-color: #5b09b1;
+    background-color: transparent;
+    font-size: 0.9rem;
 }
 
-/* --- RODAPE FIM --- */
+/* =========================================================
+   RESPONSIVIDADE PARA TABLETS
+   ========================================================= */
 
-/* --- CALCULADORA CONSUMO COMBUSTÍVEL --- */
-
-.barras {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-.barras input {
-    width: 40%;
-}
-
-button {
-    margin-left: 10px;
-    padding: 5px 10px;
-    color: #282828;
-    background-color: #fff001;
-    border-radius: 15px;
-}
-
-#resultado {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-}
-
-/* --- CALCULADORA CONSUMO COMBUSTÍVEL FIM --- */
-
-/* --- FORMATAÇÃO PARA CELULAR INÍCIO --- */
-
-@media (max-width: 620px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .conteudo_principal, aside {
-        width: 100%;
+@media (max-width: 900px) {
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .img_logo {
-        margin: 0 auto;
-        display: block;
+        margin-left: 20px;
     }
 
     .img_banner {
-        margin: 20px auto 0 auto;
-        display: block;
-        width: 100%;
-        max-width: 350px;
+        margin-right: 20px;
+        width: 300px;
     }
 }
 
-@media (max-width: 400px) {
-    .nav_menu li a {
-        padding: 2px;
-        font-size: 0.6rem;
+/* =========================================================
+   RESPONSIVIDADE PARA CELULAR
+   ========================================================= */
+
+@media (max-width: 620px) {
+    .cabecario {
+        justify-content: center;
+        gap: 20px;
+        text-align: center;
     }
 
-    .nav_menu li a u {
-        padding: 2px;
-        font-size: 0.6rem;
+    .img_logo {
+        margin: 0;
+        width: 90px;
     }
 
     .img_banner {
-        margin: 5px auto 0 auto;
-        display: block;
+        margin: 0;
         width: 100%;
-        max-width: 300px;
+        max-width: 330px;
     }
 
-    .container_galeria {
-        display: block;
-        padding: 0;
+    .menu li a {
+        padding: 10px 8px;
+        font-size: 0.8rem;
     }
 
-    .galeria div {
-        float: none;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
+    .container {
+        padding: 15px;
     }
 
-    .galeria .foto:target {
-    position: fixed;
-    width: 90%;
-    top: 15px;
-    left: 5%;
-    padding: 5px;
-    border: solid 1px #333;
-    box-shadow: 0 0 25px 10px #000;
-    border-radius: 5px;
+    .galeria {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .foto img {
+        height: 260px;
+    }
+
+    .foto:target {
+        padding: 10px;
+    }
+
+    .foto:target img {
+        max-width: 95%;
+        max-height: 70vh;
     }
 
     .foto:target .legenda_foto {
-        display: block;
+        font-size: 0.9rem;
+    }
+
+    .galeria iframe {
+        width: 100%;
+        height: 500px;
+    }
+
+    .rodape {
+        padding: 10px 15px;
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+
+    body {
+        padding-bottom: 95px;
     }
 }
 
-/* --- FORMATAÇÃO PARA CELULAR FIM --- */
+/* =========================================================
+   RESPONSIVIDADE PARA CELULARES MUITO PEQUENOS
+   ========================================================= */
+
+@media (max-width: 400px) {
+    .menu li a {
+        padding: 8px 5px;
+        font-size: 0.65rem;
+    }
+
+    .foto img {
+        height: 220px;
+    }
+
+    .galeria iframe {
+        height: 450px;
+    }
+
+    .artigos h1 {
+        font-size: 1.1rem;
+    }
+}
