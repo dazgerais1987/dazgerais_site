@@ -134,6 +134,14 @@ p {
     height: 100%;
 }
 
+.section_galerias {
+    background-color: #282828;
+    border-radius: 15px;
+    padding-top: 2.5rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
 .artigos_paginas {
     height: 50vh;
     background-color: #282828;
