@@ -8,7 +8,7 @@
 /* Configuração geral do corpo da página */
 body {
     font-family: Ari*l, Helvetica, sans-serif;
-    background-color: #282828;
+    background-color: #fff001;
     color: #ffffff;
     padding-bottom: 70px; /* Espaço para o rodapé fixo não cobrir o conteúdo */
 }
@@ -40,7 +40,9 @@ p {
     line-height: 1.5;
 }
 
-/* CABEÇALHO */
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
 
 .cabecario {
     display: flex;
@@ -117,8 +119,46 @@ p {
 }
 
 .conteudo_principal {
+    background-color: #282828;
+    border-radius: 15px;
     width: 65%;
-    padding-left: 1rem;
+    padding-top: 2.5rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+.section_sobre_contato {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.sobre_contato {
+    height: 50vh;
+    background-color: #282828;
+    border-radius: 15px;
+    padding-top: 2.5rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+.sobre_contato h1 {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    color: #fff001;
+    text-align: center;
+}
+
+.sobre_contato p {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.sobre_contato > p:last-child a {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
 }
 
 .conteudos {
@@ -178,6 +218,9 @@ aside {
     width: 35%;
     background-color: #5b09b1;
     border-radius: 15px;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 /* NAV Lateral */
