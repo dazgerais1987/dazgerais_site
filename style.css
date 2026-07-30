@@ -127,14 +127,14 @@ p {
     padding-right: 2.5rem;
 }
 
-.section_sobre_contato {
+.section_paginas {
     display: block;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
 
-.sobre_contato {
+.artigos_paginas {
     height: 50vh;
     background-color: #282828;
     border-radius: 15px;
@@ -143,19 +143,19 @@ p {
     padding-right: 2.5rem;
 }
 
-.sobre_contato h1 {
+.artigos_paginas h1 {
     font-size: 1.4rem;
     margin-bottom: 2rem;
     color: #fff001;
     text-align: center;
 }
 
-.sobre_contato p {
+.artigos_paginas p {
     text-align: center;
     margin: 15px 0;
 }
 
-.sobre_contato > p:last-child a {
+.artigos_paginas > p:last-child a {
     display: block;
     text-align: center;
     margin-top: 30px;
