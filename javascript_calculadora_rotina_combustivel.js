@@ -32,7 +32,7 @@ function calcular() {
     let valorMensal = consumoRotina * valorCombustivel;
 
     // 4. Exibição do resultado
-    msg_resultado.innerHTML = `Consumo médio do veículo: ${kmVeiculo}km/l, total da sua rotina: ${rotinaMensal}km em um mês de ${qntMes} dias, valor do combustível por litro: R$ ${valorCombustivel}, você irá consumir ${consumoRotina.toFixed(1)} litros e irá gastar R$ ${valorMensal.toFixed(2)} neste mês.`;
+    msg_resultado.innerHTML = `Consumo médio do veículo: ${kmVeiculo}km/l, total da sua rotina: ${rotinaMensal}km em um total de ${qntMes} dias, valor do combustível por litro: R$ ${valorCombustivel}, você irá consumir ${consumoRotina.toFixed(1)} litros e irá gastar R$ ${valorMensal.toFixed(2)} neste mês.`;
 
     // 5. Limpar os inputs para o próximo cálculo
     document.getElementById("kmRotina1").value = "";
