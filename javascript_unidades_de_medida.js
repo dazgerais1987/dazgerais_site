@@ -289,6 +289,42 @@ function calcularPound() {
     document.getElementById("valorConverter").value = "";
 }
 
+// Converter Peso e Massa:
+function calcularPesoMassa() {
+    // 1. Coleta de dados do input
+    let valorPM = parseFloat(document.getElementById("valorConverter").value);
+
+    // 2. Validação de dados
+    if (isNaN(valorPM)) {
+        msg_resultado.innerHTML = '<span style="color: red;">Informação inválida!</span>';
+
+        msg_resultado.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+        });
+        
+        return;
+    }
+
+    // 3. Cálculos
+    let converteOnca = valorPM * 28.35;
+    let converteLibra = valorPM * 0.45359237;
+
+    // 4. Exibição do resultado
+    msg_resultado.innerHTML = `O valor: ${valorPM} onças, equivale: ${converteOnca.toFixed(2).replace(".", ",")}kg, e o valor ${valorPM} libras equivale: ${converteLibra.toFixed(2).replace(".", ",")}kg.`;
+
+    // Faz a página rolar até o resultado
+    msg_resultado.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+    });
+
+    // 5. Limpar os inputs para o próximo cálculo
+    document.getElementById("valorConverter").value = "";
+}
+
+// VOLUME E LIQUIDOS
+
 // Converter Onça fluida em Litros:
 // Onça fluida (fluid once / fl oz): 0.0295735L
 function calcularFluidOnce() {

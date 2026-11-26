@@ -1,0 +1,195 @@
+body.lb-disable-scrolling {
+  overflow: hidden;
+}
+
+.lightboxOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: black;
+  opacity: 0.8;
+  display: none;
+}
+
+.lightbox {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  text-align: center;
+  line-height: 0;
+  font-weight: normal;
+  outline: none;
+}
+
+.lightbox .lb-image {
+  display: block;
+  height: auto;
+  max-width: inherit;
+  max-height: none;
+  border-radius: 3px;
+
+  /* Image border */
+  border: 4px solid white;
+}
+
+.lightbox a img {
+  border: none;
+}
+
+.lb-outerContainer {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  border-radius: 4px;
+
+  /* Background color behind image.
+     This is visible during transitions. */
+  background-color: white;
+}
+
+.lb-outerContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.lb-loader {
+  position: absolute;
+  top: 43%;
+  left: 0;
+  height: 25%;
+  width: 100%;
+  text-align: center;
+  line-height: 0;
+}
+
+.lb-cancel {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  background: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj8ZJhEIvX5spX9lvL1KRzymB9TRBCuRYQ5HWJpDfUydyLTqrwpFs-MQCMETWMQVa_WR8GWCc02NZDI2RpYnKNvGF2N0BP9ioblkrO0cF1x97mx67b8vbUALitZIUJOFMw9M04tUC-ZDzKT9qh6UI3uZqHxeUeJMwrk6ZlcNNp_2Dt-iEzuD_P5LKjIeAS_/s32/loading.gif) no-repeat;
+}
+
+.lb-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+.lb-container > .nav {
+  left: 0;
+}
+
+.lb-nav a {
+  outline: none;
+  background-image: url('data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');
+}
+
+.lb-prev, .lb-next {
+  height: 100%;
+  cursor: pointer;
+  display: block;
+}
+
+.lb-nav a.lb-prev {
+  width: 34%;
+  left: 0;
+  float: left;
+  background: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMETtgkN0pmL0pc7x5cxsMBRcaIejN4td8jSJTzQiQwQ7TtGZMik9AgaBBg0Mpe-t2F4txJ-A8vRBPmE24Rj2xJgTUllBEfWhcfPtHj5LWFX5awrGEWkMaZwGcmxMD13OZnWs_WOcIaJyTA89Z8bZ5Ic6P5f5LTUEZnTwsotVKzHDWIXhKHRziACAScoxs/s50/prev.png) left 48% no-repeat;
+  opacity: 0;
+  -webkit-transition: opacity 0.6s;
+  -moz-transition: opacity 0.6s;
+  -o-transition: opacity 0.6s;
+  transition: opacity 0.6s;
+}
+
+.lb-nav a.lb-prev:hover {
+  opacity: 1;
+}
+
+.lb-nav a.lb-next {
+  width: 64%;
+  right: 0;
+  float: right;
+  background: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiE4pWQvGrifMPSmvj6Whefm1ao2KglgMAx8RM1zqVNDzP_UFUjfUIRLTay6_q9Yy4J8X-aVwSeMye1JrGWbDsSpkNaZIe33w4S9uH5dhHpzZvO64v_lxZx8_EKxDVD5eIzQNyjSIoMjWs_vmZs3MLd-mIY6-GrLF4MBxsbG8yWSGJna-la8VvJhcWz0lLk/s50/next.png) right 48% no-repeat;
+  opacity: 0;
+  -webkit-transition: opacity 0.6s;
+  -moz-transition: opacity 0.6s;
+  -o-transition: opacity 0.6s;
+  transition: opacity 0.6s;
+}
+
+.lb-nav a.lb-next:hover {
+  opacity: 1;
+}
+
+.lb-dataContainer {
+  margin: 0 auto;
+  padding-top: 5px;
+  width: 100%;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.lb-dataContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.lb-data {
+  padding: 0 4px;
+  color: #ccc;
+}
+
+.lb-data .lb-details {
+  width: 85%;
+  float: left;
+  text-align: left;
+  line-height: 1.1em;
+}
+
+.lb-data .lb-caption {
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1em;
+}
+
+.lb-data .lb-caption a {
+  color: #4ae;
+}
+
+.lb-data .lb-number {
+  display: block;
+  clear: left;
+  padding-bottom: 1em;
+  font-size: 12px;
+  color: #999999;
+}
+
+.lb-data .lb-close {
+  display: block;
+  float: right;
+  width: 30px;
+  height: 30px;
+  background: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjzItvgEDJUhf-bWXeJveydnL2vHt5WJprLgFS6839gZWjKYBHew-Vj2RAqc3aNY_qpbnK7OIQ1EGwy9-xlvAWP1HataUyOcwb0JEniL06vjgsr_EmoKT6kUKUD-CfGukgmIo94Er8A8FiGU9rGGuZ2gDeSWrcWl-vg8Q-9fznWdUuE80rOh4XuIV3fE_Ct/s27/close.png) top right no-repeat;
+  text-align: right;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.lb-data .lb-close:hover {
+  cursor: pointer;
+  opacity: 1;
+}
