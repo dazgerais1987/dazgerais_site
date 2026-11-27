@@ -12,7 +12,7 @@ body {
     font-family: Ari*l, Helvetica, sans-serif;
     background-color: #fff001;
     color: #ffffff;
-    padding-bottom: 70px; /* Espaço para o rodapé fixo não cobrir o conteúdo */
+    /* padding-bottom: 70px; Espaço para o rodapé fixo não cobrir o conteúdo */
 }
 
 div {
@@ -34,6 +34,19 @@ div ul {
     padding-bottom: 15px;
 }
 
+/* ESTILO GERAL DOS TÍTULOS H1, H2 e H3 */
+h1 {
+    font-size: 1.4rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+}
+
 /* ESTILO GERAL DOS LINKs */
 a {
     color: #fff001;
@@ -47,8 +60,59 @@ a:hover {
 
 /* PARÁGRAFOS */
 p {
+    font-size: 1rem;
     text-align: justify;
     line-height: 1.5;
+}
+
+/*  =========================================================
+    CONFIGURAÇÃO PAGINA MAIN INDEX DE SELEÇÃO
+    ========================================================= */
+
+.main_index {
+    background-color: #000;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;     /* centraliza na vertical */
+    justify-content: center; /* centraliza na horizontal (opcional) */
+}
+
+.main_index > section {
+    text-align: center;
+    justify-content: center;
+}
+
+.main_index > section h1 {
+    font-size: 1.8rem;
+}
+
+.main_index > section h2 {
+    font-size: 1.6rem;
+}
+
+.main_index > section h3 {
+    font-size: 1.3rem;
+}
+
+.select_index {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 30px;
+}
+
+.img_index {
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+    max-height: 300px;
+    display: block;
+}
+
+.select_index img:hover {
+    transform: scale(1.04);
 }
 
 /*  =========================================================
@@ -140,6 +204,7 @@ u {
     border-radius: 15px;
     min-width: 300px;
     padding-top: 2.5rem;
+    text-align: center;
 }
 
 /* =========================================================
@@ -164,7 +229,7 @@ u {
     gap: 15px;
 }
 
-.colunas_destaques > h2 {
+.colunas_destaques > h1 {
     padding-top: 15px;
     text-align: center;
 }
@@ -213,7 +278,6 @@ u {
 }
 
 .artigos_paginas h1 {
-    font-size: 1.4rem;
     margin-bottom: 2rem;
     color: #fff001;
     text-align: center;
@@ -320,7 +384,6 @@ aside {
 
 .nav_lateral h1 {
     text-align: center;
-    font-size: 1.4rem;
     margin-bottom: 15px;
 }
 
@@ -504,12 +567,12 @@ form {
     margin-top: 30px;
 }
 
-label {
-    font-size: 1.3rem;
-}
+/* label {
+    font-size: 1.2rem;
+} */
 
 input {
-    font-size: 1.3rem;
+    /* font-size: 1.2rem; */
     width: 30%;
 }
 
@@ -791,6 +854,6 @@ input {
     }
 
     .artigos h1 {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 }
