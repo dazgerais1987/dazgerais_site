@@ -107,7 +107,7 @@ p {
     width: 100%;
     max-width: 300px;
     height: 100%;
-    max-height: 300px;
+    max-height: 200px;
     display: block;
 }
 
@@ -727,6 +727,10 @@ input {
         width: 100%;
         height: 100%;
     }
+
+    .img_index {
+        width: 150px;
+    }
 }
 
 /* =========================================================
@@ -812,6 +816,10 @@ input {
 
     body {
         padding-bottom: 95px;
+    }
+
+    .img_index {
+        width: 100px;
     }
 }
 
